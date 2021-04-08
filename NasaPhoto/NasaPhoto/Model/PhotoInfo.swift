@@ -8,8 +8,7 @@
 
 import Foundation
 
-struct PhotoInfo: Decodable {
-    public static var sharedInstance:PhotoInfo?
+struct PhotoInfo: Decodable,Encodable {
        
        let date: String
        let explanation: String
@@ -35,7 +34,6 @@ struct PhotoInfo: Decodable {
            self.serviceVersion = serviceVersion
            self.title = title
            self.url = url
-        PhotoInfo.sharedInstance = self
        }
        
        init(from decoder: Decoder) throws {
